@@ -5,7 +5,9 @@ import React from 'react'
 export default function Header() {
   return (
     <main className='w-full px-20 text-neutral-100 bg-blue-900 py-4 flex justify-between items-center'>
-      <h1 className='font-bold text-2xl'>BrandName</h1>
+      <Link href='/'>
+        <h1 className='font-bold text-2xl'>BrandName</h1>
+      </Link>
       <div className='flex gap-2'>
         <span className='cursor-pointer flex items-center relative mr-6'>
           <Heart />
