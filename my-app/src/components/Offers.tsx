@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import GiftBoxImage from '../../public/Gift-Box.png';
+import Link from 'next/link';
 export default function Offers() {
   return (
     <main>
@@ -17,8 +18,8 @@ export default function Offers() {
                 – just look for the blue Genius label
                 </p>
                 <div className='flex items-center gap-2'>
-                    <button className='p-2 text-sm text-neutral-100 font-semibold cursor-pointer hover:bg-blue-900 bg-blue-700 rounded-lg'>Sign in</button>
-                    <button className='font-semibold text-sm cursor-pointer hover:text-blue-900 text-blue-700'>Register</button>
+                    <Link href='/login' className='p-2 text-sm text-neutral-100 font-semibold cursor-pointer hover:bg-blue-900 bg-blue-700 rounded-lg'>Sign in</Link>
+                    <Link href='/register' className='font-semibold text-sm cursor-pointer hover:text-blue-900 text-blue-700'>Register</Link>
                 </div>
             </div>
             <div className='relative overflow-hidden w-24 h-24'>

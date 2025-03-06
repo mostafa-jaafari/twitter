@@ -1,7 +1,7 @@
-import Find from "@/components/Find";
 import Footer from "@/components/Footer";
 import GetInspiration from "@/components/GetInspiration";
 import Offers from "@/components/Offers";
+import SearchAppartementInputs from "@/components/SearchAppartementInputs";
 import SuggestionsAppartements from "@/components/SuggestionsAppartements";
 import TrendingDestinations from "@/components/TrendingDestinations";
 import UniqueProperties from "@/components/UniqueProperties";
@@ -21,8 +21,8 @@ export default function Home() {
         <p className="text-xl text-neutral-300">Discover dreamy villas, houses, cabins, & more</p>
         <button className="py-2 px-4 rounded bg-blue-700 font-semibold">Find yours</button>
       </section>
-      <section className="absolute px-20 w-full -bottom-8 left-0">
-        <Find />
+      <section className="absolute w-full -bottom-8 left-0">
+            <SearchAppartementInputs />
       </section>
     </main>
     <main className="w-full p-20">
