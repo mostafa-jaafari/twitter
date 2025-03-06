@@ -11,7 +11,7 @@ export default function SearchAppartementInputs() {
               <Sofa />
               <input className="outline-none placeholder:font-normal font-semibold w-full" id="Place" type="text" placeholder="Where are you going" />
           </div>
-        </div>
+        </div> 
         <div className="grow flex flex-col items-center">
           <label className="text-xl font-semibold" htmlFor="Check-In">Check in</label>
           <input className="w-full outline-none rounded-lg border-1 border-dashed p-3" id="Check-In" type="date" />
