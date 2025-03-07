@@ -19,7 +19,7 @@ export default function UICradGrid({PRODUCT_IMAGE, NAME, COUNTRY, CITY, PRICE, R
         </div>
         <div className="p-2">
             <b>{NAME}</b>
-            <span className='flex flex-wrap items-center justify-between'>
+            <span className='flex flex-col items-start gap-2 justify-between'>
                 <p className='font-semibold text-blue-700 uppercase'>{COUNTRY} • <span className='font-normal text-neutral-600 capitalize'>{CITY}</span></p>
                 <ins className='text-green-600 font-semibold border px-2 rounded-full no-underline'>{PRICE}</ins>
             </span>

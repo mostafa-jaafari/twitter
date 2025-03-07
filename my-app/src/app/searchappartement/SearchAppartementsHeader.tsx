@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import React, { useState } from 'react'
 
 
@@ -10,11 +10,18 @@ type InitialStyleType = {
 }
 export default function SearchAppartementsHeader({InitialStyle, ResultCount, SEARCHED_PLACE}: InitialStyleType) {
     const [templateStyle, setTemplateStyle] = useState(InitialStyle);
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
     const router = useRouter();
-    const HandleSetMode = (mode:string) => {
-      router.push(`?view=${mode}`);
+    const HandleSetMode = (mode: string) => {
+      
+      const params = new URLSearchParams(searchParams.toString());
+      
+      params.set('view', mode);
+      
+      router.push(`${pathname}?${params.toString()}`);
       setTemplateStyle(mode);
-    }
+    };
   return (
     <main>
       <section className='flex justify-between items-center'>
@@ -24,7 +31,7 @@ export default function SearchAppartementsHeader({InitialStyle, ResultCount, SEA
                 return (
                     <p key={index}
                     onClick={() => HandleSetMode(mode)}
-                    className={`px-4 cursor-pointer transition-all ${mode === templateStyle && 'bg-blue-700 rounded-full text-white font-semibold'}`}>{mode}</p>
+                    className={`px-4 cursor-pointer transition-all ${mode === InitialStyle && 'bg-blue-700 rounded-full text-white font-semibold'}`}>{mode}</p>
                 )
             })}
         </div>

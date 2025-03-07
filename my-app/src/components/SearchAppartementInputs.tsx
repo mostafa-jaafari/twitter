@@ -7,8 +7,9 @@ type InitialPlaceType = {
   InitialPlace: string;
   InitialCheckIn: string;
   InitialCheckOut: string;
+  InitialStyle: string;
 }
-export default function SearchAppartementInputs({InitialPlace, InitialCheckIn, InitialCheckOut}: InitialPlaceType) {
+export default function SearchAppartementInputs({InitialStyle, InitialPlace, InitialCheckIn, InitialCheckOut}: InitialPlaceType) {
   const [Inputs, setInputs] = useState({
     place: InitialPlace,
     checkin: InitialCheckIn,
@@ -16,18 +17,18 @@ export default function SearchAppartementInputs({InitialPlace, InitialCheckIn, I
   })
   const Router = useRouter();
   const HandleSubmitSearch = () => {
-    const isAllEmpty = Object.values(Inputs).every(value => value === '');
-    if (isAllEmpty) {
-      Router.push('/searchappartement');
-    } else {
+      const isAllEmpty = Object.values(Inputs).every(value => value === '');
+      if (isAllEmpty) {
+        Router.push('/searchappartement' + `?view=${InitialStyle}`);
+      } else {
       const queryParams = new URLSearchParams();
-    
-      if (Inputs.place.trim()) queryParams.append('place', Inputs.place);
+      
+      if (Inputs.place) queryParams.append('place', Inputs.place);
       if (Inputs.checkin) queryParams.append('checkin', Inputs.checkin);
       if (Inputs.checkout) queryParams.append('checkout', Inputs.checkout);
       const queryString = queryParams.toString();
       Router.push(`/searchappartement${queryString ? '?' + queryString : ''}`);
-    }    
+    }
   }
   return (
     <main className='w-full px-20'>
