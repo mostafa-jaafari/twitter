@@ -14,7 +14,6 @@ export default function SearchAppartementsHeader({InitialStyle, ResultCount, SEA
     const pathname = usePathname();
     const router = useRouter();
     const HandleSetMode = (mode: string) => {
-      
       const params = new URLSearchParams(searchParams.toString());
       
       params.set('view', mode);
@@ -25,7 +24,7 @@ export default function SearchAppartementsHeader({InitialStyle, ResultCount, SEA
   return (
     <main>
       <section className='flex justify-between items-center'>
-        <b className="capitalize">{SEARCHED_PLACE} :<span> ({ResultCount}) results</span></b>
+        <b className="capitalize">{SEARCHED_PLACE ? SEARCHED_PLACE : 'All'} :<span> ({ResultCount}) results</span></b>
         <div className='flex items-center gap-1 bg-blue-100 rounded-full p-1 w-max'>
             {['grid', 'list'].map((mode,index) => {
                 return (

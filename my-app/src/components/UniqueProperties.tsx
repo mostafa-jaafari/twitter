@@ -1,9 +1,9 @@
-import { Apartments } from "@/FakeData/Appartments";
 import UICardGrid from "@/UI/UICardGrid";
+import { ApartmentsData } from "@/FakeData/Appartments";
 
 
-
-export default function UniqueProperties(){
+export default async function UniqueProperties(){
+    const Apartments = await ApartmentsData();
     const Properties_Cards = Apartments.slice(0,8);
     return (
         <main className="w-full">
@@ -15,17 +15,20 @@ export default function UniqueProperties(){
                 we have it all
             </p>
             <section className="flex flex-wrap items-center justify-center gap-2">
-            {Properties_Cards.map((appartment) => {
-                const [city, country] = appartment.location.split(", ");
+            {Properties_Cards.map((apartment) => {
+                const [city, country] = apartment?.location.split(", ");
+                const Filtred_Images = Properties_Cards.find((Apartment) => Apartment.id === apartment.id)
                     return (
                         <UICardGrid 
-                            key={appartment?.id} 
+                            key={apartment?.id}
+                            APARTMENT_ID={apartment?.id} 
                             COUNTRY={country}
                             CITY={city}
-                            PRICE={appartment?.price}
-                            NAME={appartment?.name}
-                            REVIEWS_COUNT={appartment?.reviewscount}
-                            PRODUCT_IMAGE={appartment?.image}/>
+                            PRICE={apartment?.price}
+                            PREVIEW_IMAGES={Filtred_Images?.overviewimages}
+                            NAME={apartment?.name}
+                            REVIEWS_COUNT={apartment?.reviewscount}
+                            />
                     )
                 })}
             </section>

@@ -49,8 +49,8 @@ useEffect(() => {
         <Link href='/' className='font-semibold text-blue-700'>More</Link>
       </span>
       {/* -------------------------- */}
-      <section className='w-full flex items-center gap-4 overflow-hidden'>
-        {Is_Scrolled_To_Left && <ChevronLeft onClick={Handle_Scroll_Left} size={30} className='z-50 rounded-full bg-blue-700 text-neutral-100 cursor-pointer'/>}
+      <section className='relative w-full overflow-hidden'>
+        {Is_Scrolled_To_Left && <ChevronLeft onClick={Handle_Scroll_Left} size={30} className='absolute top-40 left-10 z-50 rounded-full shadow-lg border shadow-blue-500 bg-blue-700 text-neutral-100 cursor-pointer'/>}
         <section ref={Slider_Ref} className='w-full flex gap-2 items-start overflow-x-scroll hide-bar'>
             <div className='relative flex-shrink-0 w-2/6 h-[350px] overflow-hidden rounded-lg'>
                 <Image loading='lazy' src={URL_Image_1} fill alt='' className='object-cover hover:scale-120 transition-transform duration-500'/>
@@ -111,7 +111,7 @@ useEffect(() => {
                 </p>
             </section>
         </section>
-            <ChevronRight onClick={Handle_Srcoll_Right} size={30} className='rounded-full bg-blue-700 text-neutral-100 cursor-pointer'/>
+            <ChevronRight onClick={Handle_Srcoll_Right} size={30} className='absolute top-40 right-10 z-50 rounded-full bg-blue-700 shadow-lg shadow-blue-500 border text-neutral-100 cursor-pointer'/>
       </section>
     </main>
   )

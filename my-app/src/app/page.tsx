@@ -22,7 +22,7 @@ export default function Home() {
         <button className="py-2 px-4 rounded bg-blue-700 font-semibold">Find yours</button>
       </section>
       <section className="absolute w-full -bottom-8 left-0">
-            <SearchAppartementInputs />
+            <SearchAppartementInputs  />
       </section>
     </main>
     <main className="w-full p-20">

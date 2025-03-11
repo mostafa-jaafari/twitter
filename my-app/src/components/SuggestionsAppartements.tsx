@@ -48,8 +48,8 @@ export default function SuggestionsAppartements() {
         <h1 className='font-semibold text-2xl py-8'>
             Browse by property type in Casablanca
         </h1>
-        <section className='w-full mb-4 overflow-hidden flex items-center gap-1'>
-            {Is_Scroll_Left && <ChevronLeft onClick={Handle_Scroll_Left} size={30} className='rounded-full bg-blue-700 text-neutral-100 cursor-pointer'/>}
+        <section className='relative w-full mb-4 overflow-hidden flex items-center gap-1'>
+            {Is_Scroll_Left && <ChevronLeft onClick={Handle_Scroll_Left} size={30} className='absolute top-20 left-10 shadow-lg shadow-blue-700 border z-50 rounded-full bg-blue-700 text-neutral-100 cursor-pointer'/>}
             <div ref={Slider_Ref} className='w-full flex items-center gap-4 overflow-x-scroll hide-bar'>
                 <div className='w-1/5 flex-shrink-0'>
                     <div className='relative rounded-lg overflow-hidden w-full h-[200px]'>
@@ -95,7 +95,7 @@ export default function SuggestionsAppartements() {
                 </div>
                 {/* ---------------------- */}
             </div>
-            <ChevronRight onClick={Handle_Srcoll_Right} size={30} className='rounded-full bg-blue-700 text-neutral-100 cursor-pointer'/>
+            <ChevronRight onClick={Handle_Srcoll_Right} size={30} className='rounded-full absolute top-20 right-10 border shadow-lg shadow-blue-700 bg-blue-700 text-neutral-100 cursor-pointer'/>
         </section>
     </main>
   )
