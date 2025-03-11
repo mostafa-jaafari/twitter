@@ -1,7 +1,14 @@
-import { DESTINITIONS } from '@/FakeData/Appartments';
+import { DESTINITIONS } from '@/FakeData/ApartmentsData';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+
+
+export const metadata: Metadata = {
+  title: 'Rentify | Apartments in Rentify',
+  description: "Explore a wide range of apartments available for rent on Rentify. Find your dream apartment today!",
+};
 
 export default async function page() {
     const Trending_Destinations_Data = DESTINITIONS;

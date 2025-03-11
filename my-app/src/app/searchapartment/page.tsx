@@ -3,9 +3,15 @@ import React from 'react'
 import SearchapArtmentsHeader from './SearchapArtmentsHeader'
 import UICardList from '@/UI/UICardList'
 import UICardGrid from '@/UI/UICardGrid'
-import { ApartmentsData } from '@/FakeData/Appartments'
+import { ApartmentsData } from '@/FakeData/ApartmentsData'
 import { CircleAlert } from 'lucide-react'
+import { Metadata } from 'next'
 
+
+export const metadata: Metadata = {
+  title: "Rentify - Search Apartments",
+  description: "Browse available apartments for rent in various locations.",
+};
 
 type searchParamsType = {
   searchParams: {

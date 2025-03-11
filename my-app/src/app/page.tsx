@@ -5,7 +5,7 @@ import SearchAppartementInputs from "@/components/SearchAppartementInputs";
 import SuggestionsAppartements from "@/components/SuggestionsAppartements";
 import TrendingDestinations from "@/components/TrendingDestinations";
 import UniqueProperties from "@/components/UniqueProperties";
-
+import Link from "next/link";
 
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         on your next adventure
         </h1>
         <p className="text-xl text-neutral-300">Discover dreamy villas, houses, cabins, & more</p>
-        <button className="py-2 px-4 rounded bg-blue-700 font-semibold">Find yours</button>
+        <Link href='/searchapartment' className="py-2 px-4 rounded bg-blue-700 font-semibold">Find yours</Link>
       </section>
       <section className="absolute w-full -bottom-8 left-0">
             <SearchAppartementInputs  />

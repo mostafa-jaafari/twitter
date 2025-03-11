@@ -262,7 +262,7 @@ export const ApartmentsData = async ():Promise<ApartmentType[]> => {
 export const DESTINITIONS: {
   image: string; 
   cityname: string; 
-  id: number; 
+  id: number;
   countryname: string;
 }[] = [
   {

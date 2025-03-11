@@ -1,5 +1,12 @@
+import { Metadata } from 'next';
 import Link from 'next/link'
 import React from 'react'
+
+
+export const metadata: Metadata = {
+    title: "Rentify - Login",
+    description: "Login to Rentify to find your dream apartment.",
+  };
 
 export default function page() {
   return (

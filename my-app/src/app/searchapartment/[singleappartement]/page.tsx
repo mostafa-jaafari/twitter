@@ -1,5 +1,5 @@
 import MapComponent from '@/components/MapComponent';
-import { ApartmentsData } from '@/FakeData/Appartments';
+import { ApartmentsData } from '@/FakeData/ApartmentsData';
 import { BathIcon, BedDoubleIcon, ConciergeBell, MapPinIcon, Star, TvIcon, UtensilsIcon, WifiIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +7,14 @@ import React from 'react'
 import CallToAction from './CallToAction';
 import ClientReviews from './ClientReviews';
 import ImageGallery from './ImageGallery';
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Rentify - Apartment Details",
+  description: "Find your perfect apartment with Rentify. Explore options across various locations.",
+};
+
 
 type PathnameID = {
     params: {
