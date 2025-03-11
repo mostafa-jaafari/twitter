@@ -86,7 +86,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <main className='w-full px-20'>
+    <main className='w-full lg:px-20 px-4'>
       <section className="flex shadow-lg shadow-neutral-400/50 gap-2 justify-center items-end p-1 rounded-lg bg-white text-blue-700">
         <div className="grow flex flex-col items-center">
           <label className="text-xl font-semibold" htmlFor="Place">Choose Place</label>
@@ -97,7 +97,7 @@ useEffect(() => {
                 setIsFocused(true)
               }}
                 className="outline-none placeholder:font-normal font-semibold w-full" id="Place" type="text" placeholder="Where are you going" />
-                <button onClick={HandleSearchPlace} className='bg-blue-700 cursor-pointer text-neutral-100 py-3 px-6 font-semibold text-xl'>Search</button>
+                <button onClick={HandleSearchPlace} className='bg-blue-700 cursor-pointer text-neutral-100 lg:py-3 py-1.5 px-6 font-semibold text-xl'>Search</button>
           </div>
         </div>
       </section>
