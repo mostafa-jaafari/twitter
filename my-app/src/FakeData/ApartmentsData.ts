@@ -293,11 +293,62 @@ export const DESTINITIONS: {
     image: 'https://images.unsplash.com/photo-1512958789358-4effcbe171a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmVzfGVufDB8MHwwfHx8Mg%3D%3D',
     cityname: 'Fes',
     countryname: 'Morocco',
-  },
-  ,{
+  },{
     id: 6,
     image: 'https://images.unsplash.com/photo-1740594372554-68463a09e6a8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFsZ2VyaWElMjB3YWhyYW58ZW58MHwwfDB8fHwy',
     cityname: 'Wahran',
     countryname: 'Algeria',
   },
 ];
+
+export const INSPIRATIONS: {
+  image: string; 
+  cityname: string; 
+  id: number;
+  countryname: string;
+  title: string;
+  description: string;
+  firstpost?: boolean;
+}[] = [
+  {
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D',
+    cityname: 'Casablanca',
+    id: 1,
+    firstpost: true,
+    countryname: 'Morocco',
+    title: '5 best ski towns around the world',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam repellendus ipsa fugit',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D',
+    cityname: 'Marakech',
+    id: 2,
+    countryname: 'Morocco',
+    title: 'The 6 best Orlando hotels for families',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam repellendus ipsa fugit',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1707343848552-893e05dba6ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D',
+    cityname: 'Fes',
+    id: 3,
+    countryname: 'Morocco',
+    title: 'The 6 best Orlando hotels for families',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam repellendus ipsa fugit',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D',
+    cityname: 'Tangier',
+    id: 4,
+    countryname: 'Morocco',
+    title: 'The 6 best Orlando hotels for families',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam repellendus ipsa fugit',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D',
+    cityname: 'Agadir',
+    id: 5,
+    countryname: 'Morocco',
+    title: 'The 6 best Orlando hotels for families',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam repellendus ipsa fugit',
+  },
+]

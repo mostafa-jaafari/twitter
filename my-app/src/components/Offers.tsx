@@ -22,7 +22,7 @@ export default function Offers() {
                     <Link href='/register' className='font-semibold text-sm cursor-pointer hover:text-blue-900 text-blue-700'>Register</Link>
                 </div>
             </div>
-            <div className='relative overflow-hidden w-24 h-24'>
+            <div className='relative overflow-hidden flex-shrink-0 w-24 h-24'>
                 <Image loading='lazy' src={GiftBoxImage} fill className='object-cover' alt='Offers'/>
             </div>
         </section>

@@ -38,7 +38,7 @@ export default async function page({searchParams}: searchParamsType) {
         <div className='py-2 bg-gradient-to-b from-blue-900 from-50% to-transparent/50 to-50%'>
             <SearchAppartementInputs />
         </div>
-        <section className='w-full px-20 py-4'>
+        <section className='w-full lg:px-20 px-4 py-4'>
           <SearchapArtmentsHeader SEARCHED_PLACE={templateStylePlace} ResultCount={Filtred_Results.length} InitialStyle={templateStyleView} />
         
           {templateStyleView === 'grid' ? 

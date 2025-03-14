@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <main className='w-full flex justify-center py-6'>
-        <section className='w-1/4'>
+        <section className='lg:w-1/4 w-full px-4'>
             <b className='text-xl'>
                 Sign in or create an account
             </b>

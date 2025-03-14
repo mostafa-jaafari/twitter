@@ -2,6 +2,7 @@ import MapComponent from '@/components/MapComponent';
 import { ApartmentsData } from '@/FakeData/ApartmentsData';
 import { BathIcon, BedDoubleIcon, ConciergeBell, MapPinIcon, Star, TvIcon, UtensilsIcon, WifiIcon } from 'lucide-react';
 import Image from 'next/image';
+import { Error_Image } from '../../../../public/Err';
 import Link from 'next/link';
 import React from 'react'
 import CallToAction from './CallToAction';
@@ -25,12 +26,12 @@ type PathnameID = {
 export default async function page({params}: PathnameID) {
     const ApartmentID = params?.singleappartement?.split('%3D')?.pop();
     const Apartments = await ApartmentsData();
-    const SelectedApartment = Apartments.find((apartment) => apartment.id.toString() === ApartmentID);
+    const SelectedApartment = Apartments?.find((apartment) => apartment?.id?.toString() === ApartmentID);
     return (
-    <main className='w-full px-8 lg:px-20 py-6'>
-      <main className='w-full flex mb-3 gap-2 items-start justify-center lg:justify-between'>
-        <ImageGallery SelectedApartment={SelectedApartment}/>
-        <section className='px-4 py-2 flex flex-col space-y-2 w-2/5 bg-red-00 rounded-lg'>
+    <main className='w-full px-4 lg:px-20 py-6'>
+      <section className=' w-full flex items-center lg:items-start lg:justify-between flex-col lg:flex-row gap-2'>
+        {SelectedApartment && <ImageGallery SelectedApartment={SelectedApartment}/>}
+        <section className='grow lg:max-w-[650px] border border-neutral-400 rounded-lg p-4 space-y-3'>
           <b className='text-2xl capitalize'>{SelectedApartment?.name}</b>
           <span className='flex gap-2 pb-2'>
             <p className='text-neutral-600 flex items-center gap-1'>{SelectedApartment?.location} <MapPinIcon size={18}/> </p>
@@ -42,9 +43,9 @@ export default async function page({params}: PathnameID) {
             </div>
           </span>
           <hr className='border-neutral-300'/>
-          <section className='w-full flex gap-2 items-center py-2'>
-            <div className='relative bg-neutral-200 flex-shrink-0 w-14 h-14 rounded-full overflow-hidden'>
-              <Image src={SelectedApartment?.hostImage} fill className='object-cover' alt=''></Image>
+          <section className='w-full flex gap-2 items-center'>
+            <div className='relative bg-neutral-200 shadow-lg border-2 border-blue-700 flex-shrink-0 w-14 h-14 rounded-full overflow-hidden'>
+              <Image src={SelectedApartment?.hostImage || Error_Image} fill className='object-cover' alt=''></Image>
             </div>
             <div className='w-full'>
               <h1 className='font-semibold '>{SelectedApartment?.hostName}</h1>
@@ -91,11 +92,11 @@ export default async function page({params}: PathnameID) {
             </span>
           </div>
         </section>
-      </main>
-      <main className='w-full flex justify-between gap-6 py-8'>
-        <section className='lg:w-2/3'>
+      </section>
+      <section className=' w-full flex flex-col lg:flex-row lg:justify-between items-center lg:items-start gap-6 py-8'>
+        <section className='w-full lg:order-1 order-2 lg:w-3/4'>
           <h1 className='text-2xl font-semibold'>Location</h1>
-          <div className='w-full bg-neutral-200 my-2 h-[350px] rounded-lg overflow-hidden'>
+          <div className='overflow-hidden w-full h-[300px] rounded-lg  my-2'>
             <MapComponent latitude={SelectedApartment?.map?.latitude || 0} longitude={SelectedApartment?.map?.longitude || 0}/>
           </div>
           <p className='text-neutral-500 flex items-center gap-1'>{SelectedApartment?.location} <MapPinIcon size={16}/></p>
@@ -104,7 +105,7 @@ export default async function page({params}: PathnameID) {
             className='text-blue-700 underline font-semibold'>
             Visit Map
             </Link>
-      <main className='w-full mt-8'>
+      <section className='w-full mt-8'>
         <h1 className='text-2xl font-semibold'>Reviews</h1>
           <section className='space-y-4 mt-2'>
             <ClientReviews 
@@ -138,12 +139,11 @@ export default async function page({params}: PathnameID) {
               PROFIL_IMAGE='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsfGVufDB8MHwwfHx8Mg%3D%3D'
               />
           </section>
-      </main>
+      </section>
         </section>
 
         <CallToAction />
-
-      </main>
+      </section>
     </main>
   )
 }

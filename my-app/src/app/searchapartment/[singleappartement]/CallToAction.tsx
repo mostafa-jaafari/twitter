@@ -4,7 +4,9 @@ import { Star } from "lucide-react";
 
 export default function CallToAction(){
   return (
-    <main className='shadow text-blue-900 grow h-max p-6 rounded-lg sticky top-20 border border-neutral-200'>
+    <main className='lg:sticky top-2 w-full lg:order-2 lg:grow 
+        md:max-w-[400px] border border-dashed text-blue-700 
+        border-blue-700 rounded-lg p-8 bg-blue-100 shadow-lg'>
       {/* ----------------------- */}
       <div className='w-full flex justify-between items-center'>
         <span className='flex items-end'>
