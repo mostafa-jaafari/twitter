@@ -1,7 +1,9 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../Firebase";
+import { db, auth as ClientAuth } from "../Firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -9,6 +11,37 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       clientId: process.env.NEXTAUTH_GOOGLE_CLIENT_ID!,
       clientSecret: process.env.NEXTAUTH_GOOGLE_CLIENT_SECRET!,
     }),
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        try {
+          if (credentials?.email && credentials?.password) {
+            // Attempt to sign in with Firebase
+            const userCredential = await signInWithEmailAndPassword(
+              ClientAuth,
+              credentials.email,
+              credentials.password
+            );
+
+            const user = userCredential.user;
+            // Return user data on successful login
+            return {
+              id: user.uid,
+              email: user.email,
+              name: user.displayName || "UnknowUser",
+              image: user.photoURL || "https://s.gravatar.com/avatar/0743d216d4ce5aea55b0a45675d313e4?s=64&d=mp",
+            };
+          }
+        } catch (error) {
+          console.error("Error during Firebase sign-in:", error);
+          return null; // Return null if authentication fails
+        }
+      },
+    })
   ],
   callbacks: {
     async jwt({ token, account, profile }) {
@@ -18,7 +51,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.name = profile.name;
         token.picture = profile.picture || profile.image || "";
 
-        // تأكد من أن Firestore يعمل بشكل صحيح
         try {
           if (profile.email) {
             const userRef = doc(db, "users", profile.email);

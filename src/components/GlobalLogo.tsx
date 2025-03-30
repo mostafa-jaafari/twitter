@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function GlobalLogo() {
+export default function GlobalLogo({CLASSNAME}:{CLASSNAME?:string;}) {
   return (
-    <Link href='/' className="text-3xl primary-color font-bold">
-        Merch<span className='secondary-color'>Hub</span>
-    </Link>
+    <div className={CLASSNAME}>
+      <Link href='/' className="text-3xl text-white font-bold">
+          Merch<span className=''>Hub</span>
+      </Link>
+    </div>
   )
 }

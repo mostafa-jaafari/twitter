@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -14,25 +14,47 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FDFCFB;
-    --foreground: #1b1b1b;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
-.primary-bg-color{
-  background-color: #6d28d9;
-  border: 1px solid #b78aff;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.primary-bg-hover:hover{
-  background-color: #733af7;
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.primary-button{
+  background-color: #009eb3;
+  border: 1px solid #78efff;
+  padding: 6px 20px;
+  text-wrap: nowrap;
+  font-size: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.primary-button:hover{
+  background-color: #007888;
+}
+.primary-button:disabled{
+  background-color: #003b42;
+  cursor: not-allowed;
+  animation: Disabled-Btn 4s ease-in-out infinite;
 }
 .primary-color{
-  color: #6d28d9;
-}
-.para-color{
-  color: #5a5a5a;
+  color: #009eb3;
 }
 .secondary-color{
   color: #FF9900;
+}
+.para-color{
+  color: #7a7a7a;
+}
+.para-color-mono{
+  color: #7a7a7a;
+  font-family: monospace;
 }
 body {
   background: var(--background);
@@ -44,7 +66,7 @@ body {
   position: absolute;
   bottom: -6;
   left: 0;
-  background-color: #6d28d9;
+  background-color: #009eb3;
   height: 3px;
   border-radius: 50px;
   animation: AfterAnimation 0.3s ease-in-out forwards;
@@ -71,4 +93,3 @@ body {
     transform: translateY(-10px);
   }
 }
-
